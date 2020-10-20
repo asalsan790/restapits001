@@ -1,7 +1,7 @@
 import express from 'express'
 import morgan from 'morgan'  // paso 2
 import helmet from 'helmet'  // paso 2
-import mongoose from 'mongoose'
+import mongoose from 'mongoose'  // paso 3
 
 import indexRoutes from './routes/indexRoutes'
 class Server {
@@ -12,6 +12,8 @@ class Server {
         this.routes()  // paso 2
     }
     config(){
+
+        // todo lo de mongoose es del paso 3
         const MONGO_URI = 'mongodb://localhost/restapits'
         mongoose.set('useFindAndModify', true)
         mongoose.connect(MONGO_URI || process.env.MONGODB_URI, {
