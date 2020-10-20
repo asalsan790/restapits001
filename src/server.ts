@@ -23,9 +23,9 @@ class Server {
             useCreateIndex: true,
             useUnifiedTopology: true       })
         .then(db => console.log('DB is connected'))
-        this.app.set('port', process.env.PORT || 3000)
+        this.app.set('port', process.env.PORT || 300)
         // Middlewares
-        this.app.use(express.json) // para que nuestro servidor entienda
+        this.app.use(express.json()) // para que nuestro servidor entienda
                                 // los formatos json desde clientes
         this.app.use(express.urlencoded({extended: false})) // para aceptar envíos 
                                                 // desde formulario
