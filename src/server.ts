@@ -22,7 +22,7 @@ class Server {
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true       })
-        .then(db => console.log('DB is connected'))
+        .then(db => console.log('DB is connected...'))
         this.app.set('port', process.env.PORT || 3000)
         // Middlewares
         this.app.use(express.json) // para que nuestro servidor entienda
