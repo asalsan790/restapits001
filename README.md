@@ -16,8 +16,8 @@ git init
 Ya tenemos los parámetros de configuración.
 
 Cambiamos 
- "target": "es6",  
-   "outDir": "./build",	
+"target": "es6",  
+"outDir": "./build",	
 
 en tsconfig.ts
 
