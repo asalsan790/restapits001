@@ -2,6 +2,8 @@ import express from 'express'
 import morgan from 'morgan'  // paso 2
 import helmet from 'helmet'  // paso 2
 import mongoose from 'mongoose'  // paso 3
+import compression from 'compression'
+import cors from 'cors'
 
 import indexRoutes from './routes/indexRoutes'
 class Server {
@@ -22,8 +24,17 @@ class Server {
             useUnifiedTopology: true       })
         .then(db => console.log('DB is connected'))
         this.app.set('port', process.env.PORT || 3000)
+        // Middlewares
+        this.app.use(express.json) // para que nuestro servidor entienda
+                                // los formatos json desde clientes
+        this.app.use(express.urlencoded({extended: false})) // para aceptar envíos 
+                                                // desde formulario
         this.app.use(morgan('dev'))  // Paso 2
         this.app.use(helmet())  // paso 2
+        this.app.use(compression())  // Para reducir el peso
+        this.app.use(cors())  // para validar que nuestro servidor pueda conectarse
+                              // a otros servidores
+
     }
     routes(){ // paso 2
         this.app.use(indexRoutes)
