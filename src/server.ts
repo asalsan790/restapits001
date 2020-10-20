@@ -22,8 +22,13 @@ class Server {
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true       })
+<<<<<<< HEAD
         .then(db => console.log('DB is connected'))
         this.app.set('port', process.env.PORT || 300)
+=======
+        .then(db => console.log('DB is connected...'))
+        this.app.set('port', process.env.PORT || 3000)
+>>>>>>> 233851a06b3f1e3f8b8a2b3be56c82c6921ef2ad
         // Middlewares
         this.app.use(express.json()) // para que nuestro servidor entienda
                                 // los formatos json desde clientes
